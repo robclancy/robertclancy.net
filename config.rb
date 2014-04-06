@@ -1,18 +1,47 @@
+set :layouts_dir, 'templates/layouts'
+
+set :layout, 'default'
+set :partials_dir, 'templates/partials'
+
+set :css_dir, 'assets/css'
+set :js_dir, 'assets/scripts'
+set :images_dir, 'assets/images'
+ignore 'assets/vendor/*'
+
+with_layout false do
+  page '*.atom'
+  page '*.rss'
+  page '*.xml'
+  page '*.css'
+end
+
+activate :livereload
+
+activate :blog do |blog|
+
+end
+
+Slim::Engine.set_default_options pretty: true, sort_attrs: true, shortcut: {'#' => {attr: 'id'}, '.' => {attr: 'class'}}
+
+=begin
+
 ###
 # Blog settings
 ###
 
 # Time.zone = "UTC"
 
+set :haml, { :attr_wrapper => '"' }
+
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-  # blog.prefix = "blog"
+  blog.prefix = "blog"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.sources = "{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "../templates/layouts/default"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -20,8 +49,8 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  blog.tag_template = "templates/tag.html"
+  blog.calendar_template = "templates/calendar.html"
 
   # Enable pagination
   # blog.paginate = true
@@ -69,7 +98,7 @@ page "/feed.xml", layout: false
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# activate :livereload
+activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -78,11 +107,13 @@ page "/feed.xml", layout: false
 #   end
 # end
 
-set :css_dir, 'stylesheets'
+set :layout, 'templates/layouts/default'
 
-set :js_dir, 'javascripts'
+set :css_dir, 'assets/css'
 
-set :images_dir, 'images'
+set :js_dir, 'assets/scripts'
+
+set :images_dir, 'assets/images'
 
 # Build-specific configuration
 configure :build do
@@ -101,3 +132,4 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+=end

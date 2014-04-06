@@ -1,0 +1,22 @@
+// Breakpoint 2 (768)
+
+@media only screen and (min-width: 768px) {
+  * {
+    margin: 0;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -36px;
+  }
+  
+  .footer-push, [role="contentinfo"] {
+    height: 36px;
+  }
+}

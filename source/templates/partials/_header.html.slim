@@ -1,0 +1,18 @@
+header role="banner"
+  div.holder
+    - if defined? home_page && home_page
+      h1
+        | R
+        span obert Clancy
+    - else
+      a.logo href="/"
+        | R
+        span obert Clancy
+    nav role="navigation"
+      ul
+        li: a href="/blog" Blog
+        li: a href="/about" About
+        li: a href="/contact" Contact
+        li: a href="https://twitter.com/RobboClancy" target="_blank": i.fi-social-twitter
+        li: a href="http://github.com/robclancy" target="_blank": i.fi-social-github
+        li: a href="http://robertclancy.net/rss": i.fi-rss

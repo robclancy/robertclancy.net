@@ -1,0 +1,35 @@
+// Mobile
+
+footer[role="contentinfo"] {
+  @include linear-gradient(to bottom, rgba(14,14,14,1) 0%,rgba(14,14,14,1) 0%);
+  line-height: 22px;
+  padding: 5px 0;
+  color: #b0a193;
+  
+  &, small {
+    font-size: rem(12px);
+  }
+  
+  a {
+    color: #888;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Breakpoint 1 (480)
+
+@media only screen and (min-width: 480px) {
+
+  footer[role="contentinfo"] {
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+    
+    section {
+      float: right;
+    }
+  }
+}
