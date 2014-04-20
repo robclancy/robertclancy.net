@@ -166,15 +166,17 @@ main.index {
       }
     }
     
-    .blog-list {
-      width: 68%;
-      float: left;
-    }
-    
-    aside {
-      float: right;
-      margin-top: -30px;
-      width: 30%;
+    .blog-details {
+      .blog-list {
+        width: 68%;
+        float: left;
+      }
+      
+      aside {
+        float: right;
+        margin-top: -30px;
+        width: 30%;
+      }
     }
   }
 }
