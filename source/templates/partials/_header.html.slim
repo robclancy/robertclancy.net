@@ -10,9 +10,12 @@ header role="banner"
         span obert Clancy
     nav role="navigation"
       ul
-        li: a href="/blog" Blog
-        li: a href="/about" About
-        li: a href="/contact" Contact
+        li itemscope=true itemtype="http://schema.org/SiteNavigationElement"
+          a itemprop="url" href="/blog": span itemprop="name" Blog
+        li itemscope=true itemtype="http://schema.org/SiteNavigationElement"
+          a itemprop="url" href="/about": span itemprop="name" About
+        li itemscope=true itemtype="http://schema.org/SiteNavigationElement"
+          a itemprop="url" href="/contact": span itemprop="name" Contact
         li: a href="https://twitter.com/RobboClancy" target="_blank": i.fi-social-twitter
         li: a href="http://github.com/robclancy" target="_blank": i.fi-social-github
         li: a href="http://robertclancy.net/rss": i.fi-rss

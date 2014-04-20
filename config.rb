@@ -21,7 +21,7 @@ activate :blog do |blog|
 
 end
 
-Slim::Engine.set_default_options pretty: true, sort_attrs: true, shortcut: {'#' => {attr: 'id'}, '.' => {attr: 'class'}}
+Slim::Engine.set_default_options pretty: true, sort_attrs: true, shortcut: {'#' => {attr: 'id'}, '.' => {attr: 'class'}}, format: :html
 
 =begin
 

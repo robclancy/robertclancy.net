@@ -1,5 +1,5 @@
 doctype html
-html
+html itemscope=true itemtype="http://schema.org/WebPage"
   head
     - if content_for? :title
       title == yield_content(:title) + " - #{data.settings.site_name}"

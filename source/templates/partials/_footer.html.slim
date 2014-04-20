@@ -1,6 +1,11 @@
 - year = Date.today.strftime('%Y')
 div.holder
-  section
+  section itemscope=true itemtype="http://schema.org/Person"
     | Designed By 
-    a href="http://rhylmayes.com" target="_blank" Rhyl Mayes
-  small &copy; #{year} Robert Clancy
+    a itemprop="url" href="http://rhylmayes.com" target="_blank"
+      span itemprop="name" Rhyl Mayes
+  small
+    |&copy;
+    span itemprop="copyrightYear" #{year}
+    span itemprop="copyrightHolder" itemscope=true itemtype="http://schema.org/Person"
+      span itemprop="name" Robert Clancy
