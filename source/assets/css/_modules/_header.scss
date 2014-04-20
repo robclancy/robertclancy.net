@@ -8,7 +8,7 @@ header[role=banner] {
   vertical-align: bottom;
   
   h1, .logo {
-    margin: -1px 0 0 40px;
+    margin: 5px 0 0 40px;
     color: $link-color;
     font-family: 'Tienne', serif; 
     font-weight: bold;
@@ -27,6 +27,7 @@ header[role=banner] {
     cursor: pointer;
     color: white;
     font-size: 30px;
+    margin-top: -7px;
     &:hover {
       text-shadow: 0 0 10px lighten($link-color, 30%);
     }
@@ -44,13 +45,22 @@ nav[role=navigation] {
   float: left;
   position: fixed;
   left: 0;
-  bottom: 50px;
+  bottom: 37px;
   top: 22px;
-  height: 100%;
   width: 80%;
   line-height: rem(20px);
   background-color: white;
   box-shadow: 4px 0 2px -2px rgba(0,0,0, 0.1);
+  overflow-y: auto;
+  
+  .dragon {
+    margin-top: 10px;
+    opacity: 0.5;
+    box-shadow: inset 1px 1px rgba(0,0,0, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
   
   ul {
     list-style: none;
@@ -91,7 +101,8 @@ nav[role=navigation] {
       float: left;
     }
     
-    .show-navigation {
+    .show-navigation,
+    .dragon {
       display: none;
     }
   }
