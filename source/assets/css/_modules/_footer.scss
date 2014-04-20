@@ -2,12 +2,13 @@
 
 footer[role="contentinfo"] {
   @include linear-gradient(to bottom, rgba(14,14,14,1) 0%,rgba(14,14,14,1) 0%);
-  line-height: 22px;
+  line-height: 18px;
   padding: 5px 0;
   color: #b0a193;
+  box-shadow: 4px 0 2px -2px rgba(0,0,0, 0.1);
   
   &, small {
-    font-size: rem(12px);
+    font-size: rem(11px);
   }
   
   a {
@@ -21,7 +22,7 @@ footer[role="contentinfo"] {
 
 // Breakpoint 1 (480)
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
 
   footer[role="contentinfo"] {
     height: 36px;
@@ -30,6 +31,10 @@ footer[role="contentinfo"] {
     
     section {
       float: right;
+    }
+    
+    &, small {
+      font-size: rem(12px);
     }
   }
 }

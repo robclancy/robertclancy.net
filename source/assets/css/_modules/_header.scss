@@ -8,7 +8,7 @@ header[role=banner] {
   vertical-align: bottom;
   
   h1, .logo {
-    margin: -1px 0 0;
+    margin: -1px 0 0 40px;
     color: $link-color;
     font-family: 'Tienne', serif; 
     font-weight: bold;
@@ -21,28 +21,114 @@ header[role=banner] {
       color: white;
     }
   }
+  
+  .show-navigation {
+    float: left;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    &:hover {
+      text-shadow: 0 0 10px lighten($link-color, 30%);
+    }
+  }
+}
+
+#ShowNavigation:checked + .wrapper .show-navigation {
+  color: $link-color;
+  &:hover {
+    text-shadow: 0 0 10px darken($link-color, 10%);
+  }
 }
 
 nav[role=navigation] {
   float: left;
+  position: fixed;
+  left: 0;
+  bottom: 50px;
+  top: 22px;
+  height: 100%;
+  width: 80%;
+  line-height: rem(20px);
+  background-color: white;
+  box-shadow: 4px 0 2px -2px rgba(0,0,0, 0.1);
   
-  ul, li {
+  ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
   li {
-    float: left;
+    margin: 0;
     
     a {
       display: block;
-      text-shadow: 1px 1px 1px #000;
       font-size: rem(15px);
-      padding: 0 15px;
+      padding: 5px 15px;
+      color: darken($link-color, 20%);
+      border-bottom: 1px solid rgba($link-color, 0.2);
       
       &:hover {
-        color: lighten($link-color, 20%);
+        background-color: lighten($link-color, 30%);
+        border-bottom-color: $link-color;
+      }
+    }
+    
+    &.icon {
+      float: left;
+      width: 33%;
+      a {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header[role=banner] {
+    h1, .logo {
+      margin-left: 0;
+      float: left;
+    }
+    
+    .show-navigation {
+      display: none;
+    }
+  }
+  
+  nav[role=navigation] {
+    float: none;
+    position: static;
+    background-color: transparent;
+    box-shadow: 0 0 0;
+    padding: 9px 10px 0 20px;
+    margin-left: 210px;
+    width: auto;
+    @include clearfix;
+    
+    li {
+      float: left;
+      line-height: inherit;
+      
+      a {
+        color: #01acfe;
+        text-shadow: 1px 1px 1px #000;
+        border: 0 none;
+        &:hover {
+          color: #A2DAF5;
+          background-color: transparent;
+        }
+      }
+      &.icon {
+        float: right;
+        width: auto;
+        a {
+          font-size: 22px;
+          color: white;
+          &:hover {
+            color: #01acfe;
+          }
+        }
       }
     }
   }
