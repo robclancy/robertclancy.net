@@ -12,13 +12,20 @@ header[role=banner] {
     color: $link-color;
     font-family: 'Tienne', serif; 
     font-weight: bold;
-    font-size: rem(27px); 
+    font-size: rem(27px);
     font-variant: small-caps; 
     text-shadow: 1px 1px 1px #000;
     letter-spacing: 2px;
     
     span {
       color: white;
+    }
+    
+    a:hover {
+      &, span {
+        color: lighten($link-color, 10%);
+        @include transition (all 0.2s ease-in-out);
+      }
     }
   }
   
@@ -49,16 +56,15 @@ nav[role=navigation] {
   top: 22px;
   width: 80%;
   line-height: rem(20px);
-  background-color: white;
+  background-color: #fefefe;
   box-shadow: 4px 0 2px -2px rgba(0,0,0, 0.1);
   overflow-y: auto;
   
   .dragon {
-    margin-top: 10px;
-    opacity: 0.5;
+    opacity: 0.95;
     box-shadow: inset 1px 1px rgba(0,0,0, 0.5);
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
   }
   
@@ -76,10 +82,12 @@ nav[role=navigation] {
       font-size: rem(15px);
       padding: 5px 15px;
       color: darken($link-color, 20%);
-      border-bottom: 1px solid rgba($link-color, 0.2);
+      border-bottom: 1px solid rgba($link-color, 0.4);
+      background-color: rgba(255,255,255, 0.5);
       
-      &:hover {
-        background-color: lighten($link-color, 30%);
+      &.active, &:hover {
+        color: darken($link-color, 30%);
+        background-color: rgba($link-color, 0.3);
         border-bottom-color: $link-color;
       }
     }
@@ -88,6 +96,7 @@ nav[role=navigation] {
       float: left;
       width: 33%;
       a {
+        font-size: 22px;
         text-align: center;
       }
     }
@@ -122,6 +131,7 @@ nav[role=navigation] {
       line-height: inherit;
       
       a {
+        background-color: transparent;
         color: #01acfe;
         text-shadow: 1px 1px 1px #000;
         border: 0 none;
