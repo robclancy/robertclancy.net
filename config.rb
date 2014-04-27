@@ -18,10 +18,12 @@ end
 activate :livereload
 
 activate :blog do |blog|
-
+  blog.sources = 'content/articles/{year}-{month}-{day}/{title}.html'
 end
 
 Slim::Engine.set_default_options pretty: true, sort_attrs: true, shortcut: {'#' => {attr: 'id'}, '.' => {attr: 'class'}}, format: :html
+
+activate :directory_indexes
 
 =begin
 

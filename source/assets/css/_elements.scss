@@ -1,8 +1,13 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 700;
   font-style: normal;
-  color: #222222;
+  color: #444;
   text-rendering: optimizeLegibility;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
@@ -15,25 +20,31 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1 {
-  font-size: 2.125em;
+  font-size: rem(36px);
 }
 
 h2 {
-  font-size: 1.6875em;
+  font-size: rem(27px);
 }
 
 h3 {
-  font-size: 1.375em;
+  font-size: rem(22px);
 }
 
 h4 {
-  font-size: 1.125em;
+  font-size: rem(18px);
 }
 
 h5 {
-  font-size: 1.125em; 
+  font-size: rem(17px);
 }
 
 h6 {
-  font-size: 1em;
+  font-size: rem(16px);
+}
+
+p {
+  font-size: rem(17px);
+  line-height: 1.6;
+  margin-bottom: 1.25em;
 }

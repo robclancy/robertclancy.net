@@ -1,7 +1,7 @@
 header role="banner"
   div.holder
-    label class="show-navigation" for="ShowNavigation" ☰
-    - if defined? home_page && home_page
+    label class="show-navigation" for="ShowNavigation"
+    - if defined?(home_page) && home_page
       h1
         a href="/"
           | R

@@ -16,15 +16,17 @@ header[role=banner] {
     font-variant: small-caps; 
     text-shadow: 1px 1px 1px #000;
     letter-spacing: 2px;
+    line-height: 1.2125em;
     
     span {
       color: white;
     }
     
-    a:hover {
+    &:hover, a:hover {
       &, span {
         color: lighten($link-color, 10%);
         @include transition (all 0.2s ease-in-out);
+        text-decoration: none;
       }
     }
   }
