@@ -1,4 +1,5 @@
 set :layouts_dir, 'templates/layouts'
+ignore 'templates/*'
 
 set :layout, 'default'
 set :partials_dir, 'templates/partials'
@@ -18,7 +19,13 @@ end
 activate :livereload
 
 activate :blog do |blog|
+  blog.layout = 'article'
+
   blog.sources = 'content/articles/{year}-{month}-{day}/{title}.html'
+
+  blog.paginate = true
+  blog.per_page = 3
+  blog.page_link = 'page-{page}'
 end
 
 Slim::Engine.set_default_options pretty: true, sort_attrs: true, shortcut: {'#' => {attr: 'id'}, '.' => {attr: 'class'}}, format: :html

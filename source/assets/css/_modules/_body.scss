@@ -12,6 +12,14 @@ body {
   padding: 0 10px;
 }
 
+main > .holder {
+  > h1 {
+    margin: 40px 0 20px;
+    line-height: 1.4;
+    border-bottom: 1px dotted #bbb;
+  }
+}
+
 // Breakpoint 3 (1024)
 
 @media only screen and (min-width: 1024px) {
