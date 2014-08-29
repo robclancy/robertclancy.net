@@ -5,3 +5,5 @@
 /themes/*/assets/vendor
 __pycache__
 srv.pid
+pelican.pid
+*.komodoproject
