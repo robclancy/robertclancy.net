@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  {% block head %}
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  <meta charset="utf-8" />
+  {% if FEED_ALL_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+  {% endif %}
+  {% if FEED_ALL_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+  {% endif %}
+  {% if FEED_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+  {% endif %}
+  {% if FEED_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+  {% endif %}
+  {% if TAG_FEED_ATOM and tag %}
+  <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+  {% endif %}
+  {% if TAG_FEED_RSS and tag %}
+  <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+  {% endif %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  {% assets filters="scss", output="css/style.css", "css/app.scss" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+  {% endassets %}
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,300italic,400italic,700,700italic,800,800italic"></link>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"></link>
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png"></link>
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"></link>
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png"></link>
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png"></link>
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"></link>
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"></link>
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"></link>
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"></link>
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196"></link>
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160"></link>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"></link>
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"></link>
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"></link>
+  <meta name="msapplication-TileColor" content="#2b5797" />
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS }}']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  {% endblock head %}
+</head>
+<body>
+</body>
+    <input id="ShowNavigation" type="checkbox">
+    <div class="wrapper">
+      {% include '_partials/header.html' %}
+      {% block content %}
+      {% endblock %}
+      <div class="footer-push"></div>
+    </div>
+    <footer role="contentinfo">
+      {% include '_partials/footer.html' %}
+    </footer>
+</body>
+</html>
