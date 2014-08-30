@@ -1,6 +1,8 @@
 title: Webscale, how critical is it?
 tags: webscale, swag, dragon, epic, mongodb
 
+<img src="/images/webscale_mongodb.jpg" alt="" itemprop="thumbnailUrl" class="thumbnail">
+
 VERY! Don't underestimate the criticalness of scaling the web!
 
 If you don't believe me just look at the numbers! <a href="http://mongodb-is-web-scale.com/" target="_blank">MongoDB</a> out performs all the DBs. Then go and <a href="http://nodejs.org/" target="_blank">node.js</a>, they do all the things at the same time! <a href="http://golang.org/" target="_blank">Go</a> was made by Google... Google knows everything! They obviously know how to make a language that is webscale! It's just as critical as web 2.0. Gota get up to date, my fellow <a href="http://areyouabrogrammer.com/" target="_blank">brogrammers</a>.

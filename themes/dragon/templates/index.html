@@ -1,59 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-<main class="index" role="main">
-  <header>
-    <div class="holder" itemprop="about" itemscop="" itemtype="http://schema.org/Person">
-      <h2>Welcome to <span itemprop="workLocation" itemscope itemtype="http://schema.org/Place"><span itemprop="name">Dragon Force Captain's Abyssal Everlasting Torturous Tea Party</span></span></h2>
-      <h3>I am a <span itemprop="jobTitle">software engineer</span> from <span itemprop="homeLocation" itemscope itemtype="http://schema.org/Place"><span itemprop="name">Australia</span></span> that specializes in server side application development and anything to do with the web.</h3>
-      <h4>See my <a itemprop="sameAs" href="http://github.com/robclancy" target="_blank">open source contributions</a>, visit <a href="http://robertclancy.net/blog">the blog</a> or you know, eat some bacon.</h4>
-    </div>
-  </header>
-  <section class="open-source-work">
-    <div class="holder">
-      <figure><img alt="github social coding" src="/assets/images/github-social-coding.png" /></figure>
-      <h2>Open Source Work <small><a href="https://github.com/robclancy">see more</a></small></h2>
-      <ul class="projects">
-        <li>
-          <dl itemscope="" itemtype="http://schema.org/Code">
-            <dt><a href="https://github.com/robclancy/presenter" itemprop="codeRepository" target="_blank"><span itemprop="name">Presenter</span></a></dt>
-            <dd itemprop="description">Simple <span itemprop="programmingLanguage" itemscope itemtype="http://schema.org/Thing"><span itemprop="name">PHP</span></span> presenter (or decorator) to "wrap" objects or arrays. Works with <a href="http://laravel.com" target="_blank">Laravel</a> or as a standalone solution.</dd>
-          </dl>
-        </li><li>
-          <dl itemscope="" itemtype="http://schema.org/Code">
-            <dt><a href="https://github.com/robclancy/string" itemprop="codeRepository" target="_blank"><span itemprop="name">PHP String Object</span></a></dt>
-            <dd itemprop="description">Attempt at a convenient string object for <span itemprop="programmingLanguage" itemscope itemtype="http://schema.org/Thing"><span itemprop="name">PHP</span></span> taking ideas from Ruby and Python.</dd>
-          </dl>
-        </li><li>
-          <dl itemscope="" itemtype="http://schema.org/Code">
-            <dt><a href="https://github.com/robclancy/xf-toolkit" itemprop="codeRepository" target="_blank"><span itemprop="name">XenForo Toolkit</span></a></dt>
-            <dd itemprop="description">A suite of <span itemprop="programmingLanguage" itemscope itemtype="http://schema.org/Thing"><span itemprop="name">PHP</span></span> development tools to help with <span itemprop="targetProduct" itemscope itemtype="http://schema.org/SoftwareApplication"><a itemprop="url" href="http://xenforo.com" target="_blank"><span itemprop="name">XenForo</span></a></span> add-on development.</dd>
-          </dl>
-        </li><li>
-          <dl itemscope="" itemtype="http://schema.org/Code">
-            <dt><a href="https://github.com/robclancy/dragonvim" itemprop="codeRepository" target="_blank"><span itemprop="name">DragonVim</span></a></dt>
-            <dd itemprop="description">Little project to emulate sublime text development into vim with easy setup. <em>Very WIP</em>.</dd>
-          </dl>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="blog-details">
-    <div class="holder">
-      <h2>From The Blog</h2>
-      <ul class="blog-list">
-        {% for article in articles %}
-            {% include '_partials/article-item.html' %}
+<main class="blog" role="main">
+  <section class="holder">
+    <h1>Blog</h1>
+    <div class="content">
+      <ul class="article-list">
+        {% for article in articles_page.object_list %}
+          <li>{% include '_partials/article.html' %}</li>
         {% endfor %}
       </ul>
-      <aside>
-        <h3>Labels</h3>
-        <ul class="blog-tags">
-          {% for tag, articles in tags %}
-            <li><a href="{{ tag.url }}">{{ tag.name }} <em>({{ articles|length }})</em></a></li>
-          {% endfor %}
-        </ul>
-      </aside>
+      {% include '_partials/pagination.html' %}
     </div>
   </section>
 </main>
+<!--- wrap_layout :default do
+  main class="blog-#{defined?(page_type) ? page_type : (paginate && page_number > 1 ? 'page' : 'index')}" role="main"
+    section class="holder"
+      - if content_for? :heading
+        header == yield_content :heading
+      div class="content"
+        - if page_articles.empty?
+          div There are no articles to be displayed
+        - else
+          ul class="article-list"
+            - page_articles.each do |article|
+              li class="article-list-item" 
+                == partial 'article', locals: {article: article, summary: true}
+        - if paginate
+          == partial 'paginate', locals: {pages: pages, prev_page: prev_page, next_page: next_page, page_number: page_number, num_pages: num_pages}
+-->
 {% endblock content %}

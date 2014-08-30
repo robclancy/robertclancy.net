@@ -163,19 +163,22 @@ main.index {
     
     .open-source-work {
       figure {
-        margin: 0 15px 0 0;
+        margin: 0;
         float: left;
-        width: 70px;
+        width: 12%;
       }
-      
+
       h2 {
-        margin-left: 85px;
+        float: right;
+        width: 86%;
       }
 
       .projects {
-        display: table;
+        float: right;
+        width: 86%;
         li {
-          display: table-cell;
+          float: left;
+          width: 25%;
           padding-right: 1em;
           &:last-child {
             padding-right: 0;
@@ -203,7 +206,16 @@ main.index {
   main.index {    
     .open-source-work {
       figure {
-        width: auto;
+        width: 12.7%;
+      }
+      h2 {
+        width: 84%;
+      }
+      .projects {
+        width: 84%;
+        li {
+          padding-right: 2em;
+        }
       }
     }
   }

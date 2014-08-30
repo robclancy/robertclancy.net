@@ -1,0 +1,20 @@
+{% if DEFAULT_PAGINATION %}
+<nav class="pagination">
+  <ul>
+    {% if articles_page.has_previous() %}
+      <li><a href="/{{ articles_previous_page.url }}">Previous</a></li>
+    {% endif %}
+    {% for page in articles_page.paginator.page_range %}
+      <li>
+        {% if page == articles_page.number %}
+          <strong>{{ page }}</strong>
+        {% else %}
+          <a href="/{{ articles_page.paginator.page(page).url }}">{{ page }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+    {% if articles_page.has_next() %}
+      <li><a href="/{{ articles_next_page.url }}">Next</a></li>
+    {% endif %}
+</nav>
+{% endif %}

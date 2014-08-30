@@ -1,1 +1,1 @@
-<li><a href="{{ article.url }}">{{article.title}}</a><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time></li>
+<li><a href="/{{ article.url }}">{{article.title}}</a> <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date.replace(' 0', ' ') }}</time></li>
