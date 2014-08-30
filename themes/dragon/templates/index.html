@@ -13,20 +13,4 @@
     </div>
   </section>
 </main>
-<!--- wrap_layout :default do
-  main class="blog-#{defined?(page_type) ? page_type : (paginate && page_number > 1 ? 'page' : 'index')}" role="main"
-    section class="holder"
-      - if content_for? :heading
-        header == yield_content :heading
-      div class="content"
-        - if page_articles.empty?
-          div There are no articles to be displayed
-        - else
-          ul class="article-list"
-            - page_articles.each do |article|
-              li class="article-list-item" 
-                == partial 'article', locals: {article: article, summary: true}
-        - if paginate
-          == partial 'paginate', locals: {pages: pages, prev_page: prev_page, next_page: next_page, page_number: page_number, num_pages: num_pages}
--->
 {% endblock content %}

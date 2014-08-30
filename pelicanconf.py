@@ -40,6 +40,13 @@ TIMEZONE = 'Australia/Sydney'
 
 DEFAULT_LANG = 'en'
 
+def sortTags(tags):
+    return sorted(tags, key=lambda k: len(k[1]), reverse=True)
+
+JINJA_FILTERS = {
+    'sortTags': sortTags
+}
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -52,4 +59,4 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True

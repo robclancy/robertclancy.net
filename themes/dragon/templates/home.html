@@ -48,7 +48,7 @@
       <aside>
         <h3>Tags</h3>
         <ul class="blog-tags">
-          {% for tag, articles in tags %}
+          {% for tag, articles in tags|sortTags %}
             <li><a href="{{ tag.url }}">{{ tag.name }} <em>({{ articles|length }})</em></a></li>
           {% endfor %}
         </ul>
