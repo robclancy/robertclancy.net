@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main class="article" role="main">
+  <section class="holder">
+    <h1>{{ article.title }}</h1>
+    <div class="content">
+      {% set page_name = 'article' %}
+      {% include '_partials/article.html' %}
+      {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+        <div class="comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = '{{ DISQUS_SITENAME }}';
+            {% if article.disqus_identifier %}
+            var disqus_identifier = '{{ article.disqus_identifier }}';
+            {% else %}
+            var disqus_identifier = '{{ article.url }}';
+            {% endif %}
+            var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+            (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</main>
+{% endblock content %}

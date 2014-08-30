@@ -15,8 +15,8 @@ CATEGORY_SAVE_AS = ''
 ARCHIVES_SAVE_AS = ''
 TAG_URL = '{slug}'
 TAG_SAVE_AS = TAG_URL + '/index.html'
-TAGS_URL = 'tags'
-TAGS_SAVE_AS = TAGS_URL + '/index.html'
+TAGS_URL = ''
+TAGS_SAVE_AS = ''
 USE_FOLDER_AS_CATEGORY = False
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = ARTICLE_URL + '/index.html'
@@ -33,6 +33,7 @@ ASSET_SOURCE_PATHS = ['assets']
 DEFAULT_DATE_FORMAT = ('%B %d, %Y')
 INDEX_SAVE_AS = 'blog/index.html'
 TEMPLATE_PAGES = {'home.html': 'index.html'}
+DISQUS_SITENAME = 'robbo'
 
 YEAR = date.today().year
 
@@ -59,4 +60,4 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = True

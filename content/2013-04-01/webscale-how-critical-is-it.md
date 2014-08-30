@@ -1,5 +1,6 @@
 title: Webscale, how critical is it?
 tags: webscale, swag, dragon, epic, mongodb
+disqus_identifier: blog-post-1
 
 <img src="/images/webscale_mongodb.jpg" alt="" itemprop="thumbnailUrl" class="thumbnail">
 
