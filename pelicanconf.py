@@ -12,6 +12,9 @@ PATH_METADATA = '(?P<date>\d{4}-\d{2}-\d{2}).*'
 DIRECT_TEMPLATES = ('index', 'tags', 'archives')
 AUTHOR_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
+USE_FOLDER_AS_CATEGORY = False
+ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 PLUGIN_PATHS = ['plugins', 'plugins/pelican-plugins']
 PLUGINS = ['assets']

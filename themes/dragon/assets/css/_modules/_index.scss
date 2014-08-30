@@ -33,8 +33,9 @@ main.index {
     }
     
     figure {
-      width: 50px;
+      width: 60px;
       float: right;
+      margin: 0;
       img {
         width: 100%;
         height: 100%;
@@ -43,6 +44,16 @@ main.index {
     
     h2 {
       font-size: rem(19px);
+    }
+
+    .projects {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 0;
+        margin: 0;
+      }
     }
     
     dl {
@@ -152,6 +163,7 @@ main.index {
     
     .open-source-work {
       figure {
+        margin: 0 15px 0 0;
         float: left;
         width: 70px;
       }
@@ -159,11 +171,16 @@ main.index {
       h2 {
         margin-left: 85px;
       }
-      
-      dl {
-        float: left;
-        margin-left: 15px;
-        width: 157px;
+
+      .projects {
+        display: table;
+        li {
+          display: table-cell;
+          padding-right: 1em;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
       }
     }
     
@@ -187,15 +204,6 @@ main.index {
     .open-source-work {
       figure {
         width: auto;
-      }
-      
-      h2 {
-        margin-left: 170px;
-      }
-      
-      dl {
-        width: 170px;
-        margin-left: 35px;
       }
     }
   }
