@@ -1,1 +1,0 @@
-../vendor/modernizr/modernizr.js
