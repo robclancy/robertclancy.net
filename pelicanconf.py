@@ -52,7 +52,7 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 10
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page-{number}/', '{base_name}/page-{number}/index.html'),

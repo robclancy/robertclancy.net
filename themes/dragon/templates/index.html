@@ -6,7 +6,7 @@
     <div class="content">
       <ul class="article-list">
         {% for article in articles_page.object_list %}
-          <li>{% include '_partials/article.html' %}</li>
+          <li class="article-list-item">{% include '_partials/article.html' %}</li>
         {% endfor %}
       </ul>
       {% include '_partials/pagination.html' %}
