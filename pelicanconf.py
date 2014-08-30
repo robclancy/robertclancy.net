@@ -13,12 +13,14 @@ DIRECT_TEMPLATES = ('index', 'tags', 'archives')
 AUTHOR_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 ARCHIVES_SAVE_AS = ''
-TAG_URL = '{slug}'
+TAG_URL = 'blog/{slug}'
 TAG_SAVE_AS = TAG_URL + '/index.html'
 TAGS_URL = ''
 TAGS_SAVE_AS = ''
+PAGE_URL = '{slug}'
+PAGE_SAVE_AS = PAGE_URL + '/index.html'
 USE_FOLDER_AS_CATEGORY = False
-ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}'
+ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = ARTICLE_URL + '/index.html'
 STATIC_PATHS = ['images']
 SLUGIFY_SOURCE = 'basename'
@@ -35,6 +37,10 @@ INDEX_SAVE_AS = 'blog/index.html'
 TEMPLATE_PAGES = {'home.html': 'index.html'}
 DISQUS_SITENAME = 'robbo'
 
+YEAR_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/index.html'
+DAY_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{date:%d}/index.html'
+
 YEAR = date.today().year
 
 TIMEZONE = 'Australia/Sydney'
@@ -48,10 +54,15 @@ JINJA_FILTERS = {
     'sortTags': sortTags
 }
 
-# Feed generation is usually not desired when developing
+FEED_ATOM = 'blog/feeds/atom.xml'
+FEED_RSS = 'blog/feeds/rss.xml'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+CACHE_CONTENT = False
 
 DEFAULT_PAGINATION = 10
 PAGINATION_PATTERNS = (
