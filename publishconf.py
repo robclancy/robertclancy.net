@@ -80,5 +80,5 @@ PAGINATION_PATTERNS = (
 
 
 ### and below here for publish specific things
-SITEURL = 'http://robertclancy.com.au'
+SITEURL = 'http://robertclancy.net'
 DELETE_OUTPUT_DIRECTORY = True
