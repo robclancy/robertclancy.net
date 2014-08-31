@@ -47,11 +47,11 @@ TIMEZONE = 'Australia/Sydney'
 
 DEFAULT_LANG = 'en'
 
-def sortTags(tags):
-    return sorted(tags, key=lambda k: len(k[1]), reverse=True)
+def topTags(tags):
+    return sorted(tags, key=lambda k: len(k[1]), reverse=True)[:10]
 
 JINJA_FILTERS = {
-    'sortTags': sortTags
+    'topTags': topTags
 }
 
 FEED_ATOM = 'blog/feeds/atom.xml'
@@ -64,7 +64,7 @@ AUTHOR_FEED_RSS = None
 
 CACHE_CONTENT = False
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page-{number}/', '{base_name}/page-{number}/index.html'),
