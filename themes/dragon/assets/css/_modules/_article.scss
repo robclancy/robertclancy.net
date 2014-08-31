@@ -1,0 +1,72 @@
+article {
+  overflow: auto;
+  h2 {
+    margin-bottom: 5px;
+    &, a {
+      color: #333;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .thumbnail {
+    float: right;
+    margin: 0 0 5px 15px;
+    border: solid 4px white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+  footer {
+    font-size: rem(13px);
+    color: #777;
+  }
+  .body {
+    margin-top: 12px;
+  }
+  // Lining these up is a pain, lucky I found this - https://gist.github.com/thebigreason/1296097
+  .social {
+    font-size: 1px;
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+    float: left;
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 95px;
+      &.google {
+        width: 75px;
+      }
+    }
+    iframe {
+      veritcal-align: middle;
+    }
+  }
+  .tags {
+    margin-top: 40px;
+    font-size: rem(14px);
+    float: right;
+    strong {
+      margin-right: 10px;
+    }
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      padding: 0;
+      margin: 0 10px 0 0;
+    }
+  }
+}
+
+.article {
+  .comments {
+    border-top: 2px solid rgba(0,39,59,.08);
+    padding-top: 2px;
+    margin: 5px 0 40px;
+  }
+}

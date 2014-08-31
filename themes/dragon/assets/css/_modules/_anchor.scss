@@ -1,0 +1,12 @@
+a {
+  color: $link-color;
+  text-decoration: none;
+  line-height: inherit;
+  @include transition (all 0.2s ease-in-out);
+  position: relative;
+  
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}

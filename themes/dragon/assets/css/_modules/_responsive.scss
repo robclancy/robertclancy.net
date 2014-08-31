@@ -1,0 +1,57 @@
+.wrapper {
+  overflow: hidden;
+}
+
+#ShowNavigation {
+  display: none;
+}
+
+// Stuff for responsive menu
+@media(max-width: 767px) { 
+  [role="banner"],
+  [role="navigation"],
+  [role="main"],
+  [role="contentinfo"] {
+    @include transition(all .3s ease);
+    @include transition-property(margin-left, margin-right);
+    width: 100%;
+    float: left;
+  }
+  
+  [role="banner"] {
+    position: fixed;
+    z-index: 9001;
+  }
+  
+  [role="navigation"] {
+    margin-top: 50px;
+    margin-left: -250px;
+    max-width: 250px;
+  }
+  
+  [role="main"] {
+    margin-top: 71px;
+    margin-left: 0;
+    margin-right: 0%;
+    float: right;
+    height: 100%;
+  }
+  
+  [role="contentinfo"] {
+    margin-left: -250px;
+    width: 250px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9001;
+  }
+  
+  #ShowNavigation:checked ~ .wrapper > [role=banner] [role="navigation"],
+  #ShowNavigation:checked ~ [role="contentinfo"]{
+    margin-left: 0;
+  }
+  
+  #ShowNavigation:checked ~ .wrapper > [role="main"] {
+    margin-right: -250px;
+  }
+}

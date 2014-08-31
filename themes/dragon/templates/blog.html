@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="blog" role="main">
+  <section class="holder">
+    <h1>{% block heading %}Blog{% endblock heading %}</h1>
+    <div class="content">
+      <ul class="article-list">
+        {% for article in articles_page.object_list %}
+          <li class="article-list-item">{% include '_partials/article.html' %}</li>
+        {% endfor %}
+      </ul>
+      {% include '_partials/pagination.html' %}
+    </div>
+  </section>
+</main>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{
+  "name": "robertclancy.net",
+  "devDependencies": {
+    "bourbon": "~4.0.2",
+    "neat": "~1.6.0",
+    "normalize-scss": "~3.0.1",
+    "foundation-icon-fonts": "*"
+  }
+}
